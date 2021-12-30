@@ -24,3 +24,7 @@ git init
 git remote add origin https://github.com/davidtpinto/ESproject.git
 git checkout -b "master"
 git commit -m "first commit"
+git push -u origin master
+git fetch
+git pull
+git push
