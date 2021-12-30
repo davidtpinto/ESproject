@@ -1,0 +1,26 @@
+http://localhost:8080/api/v1/person
+
+docker run --name postgres-JC -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+
+docker ps -> listar containers ativos
+
+docker exec -it 05164c8044f2  bin/bash -> aceder ao terminal do container com o id "05164c8044f2"
+
+psql -U postgres -> aceder ao terminal postgres
+\l  listar databases
+CREATE DATABASE "NOMEDB" -> criar database com nome igual ao usado no application.yml
+
+\c "NOMEDB" -> entrar na database
+
+\d | \dt -> listar relacoes na db
+\d person -> listar tabela person
+
+CREATE EXTENSION "uuid-ossp"; -> criar extensão para gerar uuid-ossp
+SELECT uuid_generate_v4(); -> gerar um uuid para inserir novo registo
+
+INSERT INTO person (id,name) VALUES (uuid_generate_v4(), 'David Pinto');
+
+git init
+git remote add origin https://github.com/davidtpinto/ESproject.git
+git checkout -b "master"
+git commit -m "first commit"
